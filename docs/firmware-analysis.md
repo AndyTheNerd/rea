@@ -44,8 +44,13 @@ analysis report retain partial results and dependency names inline.
 Upstream sources are preserved unmodified as optional pinned submodules:
 
 ```sh
-git submodule update --init third_party/binwalk third_party/unblob
+git submodule update --init third_party/binwalk
+git submodule update --init --checkout third_party/unblob
 ```
+
+Unblob is marked `update = none` because its test fixtures include file names
+that Windows cannot check out, which would make recursive clones (such as GitHub
+Desktop's) fail. Initialize it explicitly on Linux or macOS only.
 
 Normal REA builds and npm packages do not include or build these sources or
 engine binaries. See [upstream provenance](https://github.com/morluto/rea/blob/main/third_party/README.md).

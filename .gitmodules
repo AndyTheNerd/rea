@@ -7,6 +7,7 @@
 [submodule "third_party/unblob"]
 	path = third_party/unblob
 	url = https://github.com/onekey-sec/unblob.git
+	update = none
 [submodule "third_party/ghidra-nativeaot"]
 	path = third_party/ghidra-nativeaot
 	url = https://github.com/Washi1337/ghidra-nativeaot.git
